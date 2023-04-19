@@ -1,0 +1,188 @@
+if game.PlaceId == 606849621 then
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Jailbreak Script", HidePremium = false, SaveConfig = true, IntroText = "Jailbreak", ConfigFolder = "OrionTest"})
+
+
+
+local MainTab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local MiscTab = Window:MakeTab({
+    Name = "Misc",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local PoliceTab = Window:MakeTab({
+    Name = "Police",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local CriminalTab = Window:MakeTab({
+    Name = "Criminal",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+local MainSection = MainTab:AddSection({
+    Name = "Main"
+})
+
+MainTab:AddButton({
+    Name = "SubsHub",
+    Callback = function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Kw6m/Subbers-scripts/main/jailbreak", true))()
+          end)
+        end
+})
+
+
+
+
+CriminalTab:AddButton({
+    Name = "Auto Rob",
+    Callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5d4b0843f800d5dcac07568e18190b7e.lua"))()
+    end    
+})
+
+
+
+
+
+CriminalTab:AddButton({
+    Name = "Get Keycard",
+    Callback = function()
+        local plrUtils = game:GetService("ReplicatedStorage").Game.PlayerUtils
+        local oldHasKey = require(plrUtils).hasKey
+        require(plrUtils).hasKey = function() 
+            return true
+        end
+    end    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local OPTab = Window:MakeTab({
+    Name = "OVERPOWERED",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+OPTab:AddButton({
+    Name = "MAIN OP SCRIPT (Synapse, KRNL, and ScriptWare.)",
+    Callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/566aef40b1988287c14719ddfebdce0e.lua"))()
+        wait(0.1)
+        OrionLib:MakeNotification({
+            Name = "Key",
+            Content = "Please join the discord for the key!",
+            Image = "rbxassetid://4483345998",
+            Time = 0.6
+        })
+    end
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local PlayerSection = MiscTab:AddSection({
+    Name = "Player"
+})
+
+
+
+MiscTab:AddButton({
+    Name = "Reset",
+    Callback = function()
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    end    
+})
+
+
+
+
+
+
+
+
+
+
+wait(0.1)
+OrionLib:MakeNotification({
+    Name = "Loading...",
+    Content = "Loading Main Tab...",
+    Image = "rbxassetid://4483345998",
+    Time = 0.6
+})
+wait(0.1)
+
+OrionLib:MakeNotification({
+    Name = "Loading Finished!",
+    Content = "The loading of Main Tab has been finished.",
+    Image = "rbxassetid://4483345998",
+    Time = 3
+})
+
+wait(1)
+OrionLib:MakeNotification({
+    Name = "Info",
+    Content = "Game: Jailbreak. Version: 0.2.1",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+
+
+
+PoliceTab:AddLabel("Nothing here yet!")
+
+
+
+
+
+end
+
+OrionLib:Init()
